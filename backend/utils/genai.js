@@ -1,11 +1,11 @@
 import "dotenv/config";
 
-const getgenAIAPIResponse = async(message) => {
+const getGenAIAPIResponse = async(message) => {
     const options = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
+            "Authorization": `Bearer ${process.env.GENAI_API_KEY}`
         },
         body: JSON.stringify({
             model: "gemini-3.0-flash-mini",
@@ -25,4 +25,4 @@ const getgenAIAPIResponse = async(message) => {
     }
 }
 
-export default getgenAIAPIResponse;
+export default getGenAIAPIResponse;
