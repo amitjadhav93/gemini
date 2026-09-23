@@ -20,7 +20,10 @@ A full-stack chatbot application that lets users chat with Google's Gemini AI. T
 - CORS
 
 **Frontend**
-- (Add details here — e.g. React, plain HTML/CSS/JS, etc.)
+- React (built with Vite)
+- Context API (`MyContext.jsx`) for global state management
+- Component-based structure: `Sidebar`, `Chat`, `ChatWindow`
+- ESLint for linting
 
 ## Project Structure
 
@@ -36,7 +39,24 @@ gemini/
 │   ├── server.js           # Express app entry point
 │   ├── package.json
 │   └── .env                # Environment variables (not committed)
-└── frontend/                # Client application
+└── frontend/
+    ├── public/
+    │   └── vite.svg
+    ├── src/
+    │   ├── App.jsx           # Root component
+    │   ├── App.css
+    │   ├── Sidebar.jsx       # Thread list / navigation
+    │   ├── Sidebar.css
+    │   ├── Chat.jsx          # Chat input & message handling
+    │   ├── Chat.css
+    │   ├── ChatWindow.jsx    # Displays the conversation
+    │   ├── ChatWindow.css
+    │   ├── MyContext.jsx     # React Context for shared app state
+    │   └── main.jsx          # App entry point
+    ├── index.html
+    ├── vite.config.js
+    ├── eslint.config.js
+    └── package.json
 ```
 
 ## Data Model
@@ -93,3 +113,18 @@ Each **Thread** represents a conversation and contains:
    ```
 
    The server will run at `http://localhost:8080`.
+
+### Frontend Setup
+
+1. In a new terminal, navigate to the frontend folder
+   ```bash
+   cd gemini/frontend
+   npm install
+   ```
+
+2. Start the dev server
+   ```bash
+   npm run dev
+   ```
+
+   The app will be available at the local URL Vite prints in the terminal (typically `http://localhost:5173`).
