@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-const getOpenAIAPIResponse = async(message) => {
+const getgenAIAPIResponse = async(message) => {
     const options = {
         method: "POST",
         headers: {
@@ -8,7 +8,7 @@ const getOpenAIAPIResponse = async(message) => {
             "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
         },
         body: JSON.stringify({
-            model: "gpt-4o-mini",
+            model: "gemini-3.0-flash-mini",
             messages: [{
                 role: "user",
                 content: message
@@ -17,7 +17,7 @@ const getOpenAIAPIResponse = async(message) => {
     };
 
     try {
-        const response = await fetch("https://api.openai.com/v1/chat/completions", options);
+        const response = await fetch("https://api.genai.com/v1/chat/completions", options);
         const data = await response.json();
         return data.choices[0].message.content; //reply
     } catch(err) {
@@ -25,4 +25,4 @@ const getOpenAIAPIResponse = async(message) => {
     }
 }
 
-export default getOpenAIAPIResponse;
+export default getgenAIAPIResponse;
