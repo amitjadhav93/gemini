@@ -1,4 +1,4 @@
-# Gemini Chat
+# Alpha AI - Full-Stack AI Chat Application
 
 A full-stack chatbot application that lets users chat with Google's Gemini AI. The backend is built with Node.js, Express, and MongoDB, and stores conversations as persistent, retrievable threads.
 
